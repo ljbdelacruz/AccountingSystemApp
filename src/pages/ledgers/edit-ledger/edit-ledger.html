@@ -1,0 +1,38 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Ledgers</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-label fixed>Title</ion-label>
+                    <ion-input type="text" value="" [(ngModel)]="nTransact.title"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label fixed>Cash</ion-label>
+                    <ion-input type="text" value="" [(ngModel)]="nTransact.cash"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label fixed>Bank</ion-label>
+                    <ion-input type="text" value="" [(ngModel)]="nTransact.bank"></ion-input>
+                </ion-item>                
+            </ion-list>
+            <ion-row>
+                <ion-col>
+                    <button ion-button color="dark" outline (click)="OnSave()">Save</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button color="dark" outline (click)="OnClose()">Close</button>
+                </ion-col>                
+                <ion-col></ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

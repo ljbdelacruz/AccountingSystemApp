@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Transaction</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1 text-center>Add Transaction</h1>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label fixed>Description</ion-label>
+        <ion-input type="text" [(ngModel)]="myDescription"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label fixed>Amount</ion-label>
+        <ion-input type="number" [(ngModel)]="myAmount"></ion-input>
+      </ion-item>  
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+        <ion-list>
+          <ion-item>
+              <ion-label>Type of Transaction</ion-label>
+              <ion-select [(ngModel)]="type">
+                <ion-option value="expense">Expense</ion-option>
+                <ion-option value="savings">Savings</ion-option>      
+              </ion-select>
+          </ion-item> 
+        </ion-list>  
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+              <ion-label>Where will i get it?</ion-label>
+              <ion-select [(ngModel)]="from" style="width:100%">
+              <ion-option value="cash">On Hand</ion-option>
+              <ion-option value="bank">Bank</ion-option>      
+              </ion-select>
+          </ion-item> 
+        </ion-list>
+      </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+            <ion-label>Where Will You Spend This?</ion-label>
+            <ion-select [(ngModel)]="to">
+            <ion-option value="other">Other Expenses</ion-option>
+            <ion-option value="bank">Bank</ion-option>      
+            <ion-option value="cash">On Hand</ion-option>              
+            </ion-select>
+        </ion-item> 
+      </ion-list>
+    </ion-card-content>
+  </ion-card>  
+  <ion-card>
+    <ion-card-content>
+      <button ion-button color="dark" outline (click)="OnSave()">Add</button>
+      <button ion-button color="dark" outline (click)="OnClose()">Close</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

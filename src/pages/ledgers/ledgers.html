@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ledgers</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+        <ion-card>
+          <ion-card-content>
+            <button ion-button color="dark" outline (click)="OnGoToAddLedgerPage()">ADD</button>
+            <button ion-button color="dark" outline (click)="OnSaveChanges()">Save Changes</button>
+          </ion-card-content>
+        </ion-card>
+        <h1 text-center>Selected Ledger: {{selectedLedger.title}}</h1>
+        <ion-card *ngFor="let item of ledgers; let i=index">
+            <ion-list>
+              <ion-item-sliding>
+                <ion-item>
+                  <h3 text-left>Date Created: {{item.date.month}}/{{item.date.day}}/{{item.date.year}}</h3>
+                  <h1 text-center>{{item.title}}</h1>
+                </ion-item>
+                <ion-item-options>
+                  <button ion-button color="dark" outline (click)="OnDeleteLedger(item, i)">Delete</button>
+                  <button ion-button color="dark" outline (click)="OnEditLedger(item, i)">Edit</button>
+                  <button ion-button color="dark" outline (click)="GetSelectedLedger(item)">Select</button>
+                </ion-item-options>
+              </ion-item-sliding>
+            </ion-list>
+        </ion-card>
+</ion-content>
